@@ -1,0 +1,40 @@
+# created by eselect-repo
+
+[DEFAULT]
+main-repo = gentoo
+
+[gentoo]
+location = /var/db/repos/gentoo
+sync-type = git
+sync-uri = https://mirrors.tuna.tsinghua.edu.cn/git/gentoo-portage.git
+
+
+[guru]
+location = /var/db/repos/guru
+sync-type = git
+sync-uri = https://github.com/gentoo-mirror/guru.git
+
+
+[gentoo-zh]
+location = /var/db/repos/gentoo-zh
+sync-type = git
+sync-uri = https://github.com/gentoo-mirror/gentoo-zh.git
+
+
+[dm9pZCAq]
+location = /var/db/repos/dm9pZCAq
+sync-type = git
+sync-uri = https://github.com/gentoo-mirror/dm9pZCAq.git
+
+
+
+[powerman]
+location = /var/db/repos/powerman
+sync-type = git
+sync-uri = https://github.com/gentoo-mirror/powerman.git
+
+
+[benzene-overlay]
+location = /var/db/repos/benzene-overlay
+sync-type = git
+sync-uri = https://github.com/gentoo-mirror/benzene-overlay.git

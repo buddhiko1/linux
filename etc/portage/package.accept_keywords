@@ -1,0 +1,26 @@
+# tools
+sys-fs/duf ~amd64
+gui-apps/wlsunset ~amd64
+app-text/tldr ~amd64
+gui-apps/wev ~amd64
+dev-db/dbeaver-bin ~amd64
+net-dns/coredns ~amd64
+gui-apps/wofi ~amd64
+app-misc/ddcutil ~amd64
+mail-client/aerc ~amd64
+gui-apps/swappy ~amd64
+media-gfx/swayimg ~amd64
+
+# fcitx5
+app-i18n/fcitx-chinese-addons ~amd64
+app-i18n/fcitx ~amd64
+app-i18n/libime ~amd64
+app-i18n/fcitx-qt ~amd64
+x11-libs/xcb-imdkit ~amd64
+app-i18n/fcitx-configtool ~amd64
+app-i18n/fcitx-rime ~amd64
+app-i18n/rime-prelude ~amd64
+
+# goldendict
+app-text/goldendict **
+dev-qt/qtwebkit ~amd64

@@ -1,0 +1,259 @@
+### Read `man 5 sway` for a complete reference.
+
+### variable
+set $mod   Mod4
+
+set $up    k
+set $down  j
+set $left  h
+set $right l
+
+set $font               pango:Noto Sans Medium 8 
+set $focused_bg_color   #Be185d
+set $unfocused_bg_color #242424
+set $border_color       #242424
+set $text_color         #ffffff
+
+### operation
+bindsym $mod+Shift+r    reload
+bindsym $mod+Shift+q    exec "swaynag -t warning -m 'Do you really want to exit sway?' -B 'Yes, exit sway' 'swaymsg exit'"
+
+### style
+show_marks                yes
+default_border            pixel 1
+hide_edge_borders         --i3 smart
+titlebar_border_thickness 0
+titlebar_padding 0
+font                      $font
+client.focused            $border_color $focused_bg_color $text_color
+client.unfocused          $border_color $unfocused_bg_color $text_color
+
+### bar
+bar {
+  status_command while date +'%I:%M %p'; do sleep 1; done
+  mode           hide
+  hidden_state   hide
+  modifier       Mod3
+  font           $font
+  tray_output    *
+  colors {
+    background        $unfocused_bg_color 
+    focused_workspace $border_color $focused_bg_color #ffffff 
+  }
+}
+bindsym $mod+b           bar hidden_state show
+bindsym --release $mod+b bar hidden_state hide
+
+### window
+# create window
+bindsym $mod+t layout tabbed
+bindsym $mod+v splith
+bindsym $mod+s layout toggle split
+
+# control window
+bindsym $mod+space kill
+bindsym $mod+f     fullscreen toggle
+
+# resize window
+mode "resize" {
+  bindsym $left  resize shrink width 10 px or 10 ppt
+  bindsym $up    resize grow height 10 px or 10 ppt
+  bindsym $down  resize shrink height 10 px or 10 ppt
+  bindsym $right resize grow width 10 px or 10 ppt
+
+  bindsym Left   resize shrink width 10 px or 10 ppt
+  bindsym Down   resize grow height 10 px or 10 ppt
+  bindsym Up     resize shrink height 10 px or 10 ppt
+  bindsym Right  resize grow width 10 px or 10 ppt
+
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+  bindsym $mod+r mode "default"
+}
+bindsym $mod+r mode "resize"
+
+# switch window focus
+bindsym $mod+a focus parent
+bindsym $mod+z focus child
+
+bindsym $mod+$left  focus left
+bindsym $mod+$down  focus down
+bindsym $mod+$up    focus up
+bindsym $mod+$right focus right
+
+bindsym $mod+Left   focus left
+bindsym $mod+Down   focus down
+bindsym $mod+Up     focus up
+bindsym $mod+Right  focus right
+
+# move window
+bindsym $mod+Shift+$left  move left
+bindsym $mod+Shift+$down  move down
+bindsym $mod+Shift+$up    move up
+bindsym $mod+Shift+$right move right
+
+bindsym $mod+Shift+Left   move left
+bindsym $mod+Shift+Down   move down
+bindsym $mod+Shift+Up     move up
+bindsym $mod+Shift+Right  move right
+
+# floating window
+bindsym $mod+Shift+f      floating toggle
+# toggle floating window focus
+bindsym $mod+Control+f    focus mode_toggle
+# hide floating window
+bindsym $mod+bracketleft  move scratchpad
+# show floating window 
+bindsym $mod+bracketright scratchpad show
+# floating pop up automatically
+for_window [class="GoldenDict"] floating enable
+
+### workspace
+workspace_layout tabbed
+
+set $ws1  "1"
+set $ws2  "2"
+set $ws3  "3"
+set $ws4  "4"
+set $ws5  "5"
+set $ws6  "6"
+set $ws7  "7"
+set $ws8  "8"
+set $ws9  "9"
+set $ws10 "10"
+
+bindsym $mod+w workspace number $ws1
+bindsym $mod+e workspace number $ws2
+bindsym $mod+o workspace number $ws3
+bindsym $mod+u workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+9 workspace number $ws9
+bindsym $mod+0 workspace number $ws10
+
+bindsym $mod+Shift+w move container to workspace number $ws1
+bindsym $mod+Shift+e move container to workspace number $ws2
+bindsym $mod+Shift+o move container to workspace number $ws3
+bindsym $mod+Shift+u move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10
+
+### app
+# terminal
+set $term alacritty
+bindsym $mod+Return exec alacritty
+
+# vim
+bindsym $mod+n exec $HOME/.config/nvim/start.sh
+
+# database client 
+bindsym $mod+d exec dbeaver
+
+# pdf reader
+bindsym $mod+p exec ~/Software/sioyek.AppImage
+
+# office
+bindsym $mod+period exec ~/Software/office.AppImage
+
+# browser
+bindsym $mod+q exec qutebrowser 
+bindsym $mod+g exec chromium --remote-debugging-port=9222
+
+# goldendict
+bindsym $mod+slash exec goldendict 
+for_window [title=".*GoldenDict"] resize set width 40 ppt
+for_window [class="GoldenDict"] floating enable
+
+# for libinput-gesturqutebrowser
+# bindsym $mod+F7 exec pkill wlsunset && wlsunset -t $temp_max -S 23:58 -s 23:58
+# bindsym $mod+F8 exec pkill wlsunset && wlsunset -t $temp_middle -S 23:58 -s 23:58
+# bindsym $mod+F9 exec $HOME/.config/sway/open_vpn.sh
+# bindsym $mod+F10 exec $HOME/.config/sway/close_vpn.sh
+
+### custom
+set $temp_mini   1600
+set $temp_low    2500
+set $temp_middle 3500
+set $temp_max    5800
+
+set $Sleep       systemctl hybrid-sleep
+set $Gesture     $HOME/.config/sway/gesture.sh
+
+set $mode_custom ( l ) logout   ( s )sleep   ( r )reboot   ( p )shutdown   ( g )gestrue   (↑)max   (←)low   (→)middle   (↓)mini   ( pgUp )vpn on  ( pgDn )vpn off   ( c )screenshot   ( w )wifi   ( - )brightness   ( + )brightness   ( i )contrast   ( d )contrast
+
+
+mode "$mode_custom" {
+  # system contrl
+  bindsym l exec swaymsg exit, mode "default"
+  bindsym s exec $Sleep, mode "default"
+  bindsym r exec systemctl reboot, mode "default"
+  bindsym p exec systemctl poweroff -i, mode "default"
+  bindsym w exec $HOME/.config/sway/wifi.sh, mode "default"
+
+  # guestrue tempstep, vps
+  # bindsym g     exec $Gesture, mode "default"
+
+  bindsym Up    exec pkill wlsunset && wlsunset -t $temp_max -S 23:58 -s 23:58, mode "default"
+  bindsym Left  exec pkill wlsunset && wlsunset -t $temp_low -S 23:58 -s 23:58, mode "default"
+  bindsym Right exec pkill wlsunset && wlsunset -t $temp_middle -S 23:58 -s 23:58, mode "default"
+  bindsym Down  exec pkill wlsunset && wlsunset -t $temp_mini -S 23:58 -s 23:58, mode "default"
+
+  bindsym Prior exec sudo wg-quick up wg0, mode "default"
+  bindsym Next  exec sudo wg-quick down wg0, mode "default"
+  bindsym c     exec flameshot gui, mode "default"
+
+  # brightness and contrast
+  bindsym minus exec sudo ddcutil setvcp 10 - 8, mode "default"
+  bindsym equal exec sudo ddcutil setvcp 10 + 8, mode "default"
+  bindsym d exec sudo ddcutil setvcp 12 - 5, mode "default"
+  bindsym i exec sudo ddcutil setvcp 12 + 5, mode "default"
+
+  # back to normal
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+}
+
+bindsym $mod+Escape mode "$mode_custom"
+
+# sleep
+exec swayidle -w \
+  timeout 1200 'swaylock' \
+  timeout 3600 'systemctl hybrid-sleep' \
+  before-sleep 'block'
+
+# wallpaper
+output * bg $HOME/.config/background/bg.jpg fill
+
+# tempstep
+exec wlsunset -t $temp_middle -S 23:58 -s 23:58
+
+# input method
+exec_always fcitx5 -d --replace
+
+# magic gestures
+# exec $Gesture
+
+### startup
+# Lock screen before actually starting, to be used with autologin
+exec swaylock
+
+# cursor theme
+seat seat0 xcursor_theme gentoo
+
+# hide cursor automatically
+seat * hide_cursor 5000
+
+# pali keyboard layout
+input type:keyboard {
+  xkb_layout us-pali
+}
+
+# auto startup
+exec $HOME/.config/sway/startup.sh
+
