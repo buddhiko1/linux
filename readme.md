@@ -4,6 +4,7 @@
   - Root filesystem：`mkfs.btrfs -L root -n 32k /dev/sda2` .
 
 ## Kernel
+  - check device driver: `lspci -kv`
   - mv kernel-config /usr/src/linux/.config .
   - enable tty display .
     ```
@@ -22,7 +23,7 @@
 
 ## User
   - set fish as default shell `chsh -s /usr/bin/fish` .
-  - accept easy password `change "enforce" option from "everyone" to "none" in the /etc/security/passwdqc.conf
+  - accept easy password: change "enforce" option from "everyone" to "none" in the /etc/security/passwdqc.conf .
 
 ## Fonts
   - /etc/locale.gen
@@ -40,7 +41,7 @@
   1. install fcitx-rime fcitx-configtool (verson > 5) .
   2. copy `etc/environment` to /etc/environment .
   3. add `exec_always fcitx5 -d --replace` to sway config .
-  4. switch simple and tradition with Ctrl + ` .
+  4. switch simple and tradition with `Shift + space` .
   5. [config rime](https://github.com/rime/home/wiki) .
 
 ## Pali keyboard layout
@@ -56,7 +57,7 @@
   - overlay
     ```
     1. `sudo emerge --ask app-eselect/eselect-repository` .
-    2. `sudo eselect repository enable guru gentoo-zh dm9pZCAq pg_overlay` .
+    2. `sudo eselect repository enable guru gentoo-zh dm9pZCAq pg_overlay src_prepare-overlay` .
     3. `sudo emerge --sync` .
     ```
 

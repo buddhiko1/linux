@@ -97,7 +97,10 @@ bindsym $mod+Shift+Down   move down
 bindsym $mod+Shift+Up     move up
 bindsym $mod+Shift+Right  move right
 
-# floating window
+# floating
+# Drag floating windows by holding down $mod and left mouse button.
+floating_modifier $mod normal
+# toggle floating window
 bindsym $mod+Shift+f      floating toggle
 # toggle floating window focus
 bindsym $mod+Control+f    focus mode_toggle
