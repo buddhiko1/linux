@@ -26,7 +26,10 @@ dev-util/tree-sitter-cli
 dev-vcs/git
 dev-vcs/gitui
 gnome-base/gsettings-desktop-schemas
+gui-apps/mako
 gui-apps/swappy
+gui-apps/swayidle
+gui-apps/swaylock
 gui-apps/wev
 gui-apps/wl-clipboard
 gui-apps/wlsunset

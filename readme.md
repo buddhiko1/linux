@@ -17,7 +17,7 @@
   1. install playmouth .
   2. `sudo plymouth-set-default-theme solar` .
   3. `sudo dracut --force` .
-  4. add `GRUB_TIMEOUT=0` and `GRUB_CMDLINE_LINUX_DEFAULT="quiet loglevel=0 vt.global_cursor_default=0 splash"` to /etc/default/grub .
+  4. add `GRUB_TIMEOUT=0`, `GRUB_HIDDEN_TIMEOUT=0` and `GRUB_CMDLINE_LINUX_DEFAULT="quiet loglevel=0 vt.global_cursor_default=0 splash"` to /etc/default/grub .
   5. run `grub-mkconfig -o /boot/grub/grub.cfg` .
   6. install grub theme [grub2-themes](https://github.com/vinceliuice) .
 
