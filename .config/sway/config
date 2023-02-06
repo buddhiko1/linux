@@ -173,6 +173,9 @@ bindsym $mod+slash exec goldendict
 for_window [title=".*GoldenDict"] resize set width 40 ppt
 for_window [class="GoldenDict"] floating enable
 
+# figma
+bindsym $mod+m exec figma-linux 
+
 # for libinput-gesturqutebrowser
 # bindsym $mod+F7 exec pkill wlsunset && wlsunset -t $temp_max -S 23:58 -s 23:58
 # bindsym $mod+F8 exec pkill wlsunset && wlsunset -t $temp_middle -S 23:58 -s 23:58
@@ -209,7 +212,7 @@ mode "$mode_custom" {
 
   bindsym Prior exec sudo wg-quick up wg0, mode "default"
   bindsym Next  exec sudo wg-quick down wg0, mode "default"
-  bindsym c     exec flameshot gui, mode "default"
+  bindsym c     exec grimshot save area ~/Pictures/last.png, mode "default"
 
   # brightness and contrast
   bindsym minus exec sudo ddcutil setvcp 10 - 8, mode "default"

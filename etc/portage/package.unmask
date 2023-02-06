@@ -7,6 +7,7 @@ dev-db/dbeaver-bin::gentoo-zh
 media-fonts/nerd-fonts::gentoo-zh
 mail-client/aerc::gentoo
 media-gfx/swayimg::src_prepare-overlay
+media-gfx/figma-linux-bin::mva
 
 # fcitx5
 app-i18n/fcitx-chinese-addons::gentoo-zh

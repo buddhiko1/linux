@@ -1,6 +1,8 @@
 app-admin/sudo
+app-arch/zip
 app-containers/docker
 app-containers/docker-compose
+app-editors/nano
 app-editors/neovim
 app-eselect/eselect-repository
 app-i18n/fcitx-configtool
@@ -39,6 +41,7 @@ media-fonts/arphicfonts
 media-fonts/nerd-fonts
 media-fonts/noto
 media-fonts/noto-emoji
+media-gfx/figma-linux-bin
 media-gfx/swayimg
 media-sound/pavucontrol
 net-libs/nodejs
