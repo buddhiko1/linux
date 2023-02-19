@@ -11,6 +11,7 @@ mail-client/aerc ~amd64
 gui-apps/swappy ~amd64
 media-gfx/swayimg ~amd64
 media-gfx/figma-linux-bin ~amd64
+app-editors/vscode ~amd64
 
 # fcitx5
 app-i18n/fcitx-chinese-addons ~amd64

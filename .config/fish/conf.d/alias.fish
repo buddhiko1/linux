@@ -93,7 +93,7 @@ end
 
 # angular 
 function ns --description 'ng serve --open'
-  ng serve $argv
+  pkill node && ng serve  --host 0.0.0.0 $argv
 end
 
 # pnpm

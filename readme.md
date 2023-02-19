@@ -83,6 +83,7 @@
 
 ## Qutebrowser
   - fullScreen Setting `cmd: fullscreen --enter`.
+  - set as default browser `xdg-settings set default-web-browser org.qutebrowser.qutebrowser.desktop`
 
 ## Fish
   - set `fish` as default shell：`chsh -s /usr/bin/fish` .

@@ -17,7 +17,6 @@ pali: read online https://www.digitalpalireader.online/_dprhtml/index.html
 web: animation https://lottiefiles.com/
 web: test https://gtmetrix.com/
 database: graphql https://graphql.org/
-css: tricks https://css-tricks.com/guides/
 html: element tool http://html5doctor.com/
 cms: collection https://jamstack.org/headless-cms/
 angular: flex-layout https://github.com/angular/flex-layout/wiki
@@ -56,7 +55,6 @@ nvim: doc https://alpha2phi.medium.com/learn-neovim-the-practical-way-8818fcf483
 web: npm https://www.npmjs.com/
 babylonjs: playground https://www.babylonjs-playground.com/
 web: study https://www.smashingmagazine.com/
-typescript: package search https://www.typescriptlang.org/dt/search?search=
 web: image https://unsplash.com/
 babylonjs: sandbox https://sandbox.babylonjs.com/
 color: color wheel https://color.adobe.com/zh/create/color-wheel
@@ -95,3 +93,6 @@ gentoo: 中文 https://bitbili.net/gentoo-linux-installation-and-usage-tutorial.
 gentoo: search package https://gpo.zugaina.org/app-i18n/fcitx
 gentoo: ebuild https://wiki.gentoo.org/wiki/Basic_guide_to_write_Gentoo_Ebuilds
 sway: keymap https://github.com/swaywm/sway/issues/4250
+css: grid https://css-tricks.com/snippets/css/complete-guide-grid/
+book:jiese https://www.jiesetd.com/novel/68.html
+angular:goback https://nils-mehlhorn.de/posts/angular-navigate-back-previous-page

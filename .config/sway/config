@@ -155,6 +155,9 @@ bindsym $mod+Return exec alacritty
 # vim
 bindsym $mod+n exec $HOME/.config/nvim/start.sh
 
+# vscode
+bindsym $mod+comma exec vscode
+
 # database client 
 bindsym $mod+d exec dbeaver
 
@@ -175,6 +178,9 @@ for_window [class="GoldenDict"] floating enable
 
 # figma
 bindsym $mod+m exec figma-linux 
+
+# sigil
+bindsym $mod+backslash exec sigil 
 
 # for libinput-gesturqutebrowser
 # bindsym $mod+F7 exec pkill wlsunset && wlsunset -t $temp_max -S 23:58 -s 23:58
