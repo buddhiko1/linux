@@ -182,6 +182,9 @@ bindsym $mod+m exec figma-linux
 # sigil
 bindsym $mod+backslash exec sigil 
 
+# foliate
+bindsym $mod+apostrophe exec com.github.johnfactotum.Foliate
+
 # for libinput-gesturqutebrowser
 # bindsym $mod+F7 exec pkill wlsunset && wlsunset -t $temp_max -S 23:58 -s 23:58
 # bindsym $mod+F8 exec pkill wlsunset && wlsunset -t $temp_middle -S 23:58 -s 23:58

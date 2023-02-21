@@ -14,6 +14,7 @@ app-misc/ranger
 app-portage/cfg-update
 app-portage/mirrorselect
 app-shells/fish
+app-text/foliate
 app-text/goldendict
 app-text/sigil
 app-text/tldr
@@ -25,6 +26,7 @@ dev-python/cjkwrap
 dev-python/pip
 dev-python/pynvim
 dev-qt/qtwayland
+dev-util/codespell
 dev-util/tree-sitter-cli
 dev-vcs/git
 dev-vcs/gitui
