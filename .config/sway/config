@@ -155,35 +155,35 @@ bindsym $mod+Return exec alacritty
 # vim
 bindsym $mod+n exec $HOME/.config/nvim/start.sh
 
-# vscode
-bindsym $mod+comma exec vscode
-
-# database client 
-bindsym $mod+d exec dbeaver
-
 # pdf reader
 bindsym $mod+p exec ~/Software/sioyek.AppImage
-
-# office
-bindsym $mod+period exec ~/Software/office.AppImage
 
 # browser
 bindsym $mod+q exec qutebrowser 
 bindsym $mod+g exec chromium --remote-debugging-port=9222
 
 # goldendict
-bindsym $mod+slash exec goldendict 
+bindsym Mod5+g exec goldendict 
 for_window [title=".*GoldenDict"] resize set width 40 ppt
 for_window [class="GoldenDict"] floating enable
 
-# figma
-bindsym $mod+m exec figma-linux 
+# database client 
+bindsym Mod5+d exec dbeaver
+
+# vscode
+bindsym Mod5+v exec vscode
+
+# krita
+bindsym Mod5+k exec krita 
 
 # sigil
-bindsym $mod+backslash exec sigil 
+bindsym Mod5+s exec sigil 
 
 # foliate
-bindsym $mod+apostrophe exec com.github.johnfactotum.Foliate
+bindsym Mod5+f exec com.github.johnfactotum.Foliate
+
+# office
+bindsym Mod5+o exec ~/Software/office.AppImage
 
 # for libinput-gesturqutebrowser
 # bindsym $mod+F7 exec pkill wlsunset && wlsunset -t $temp_max -S 23:58 -s 23:58

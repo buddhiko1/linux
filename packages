@@ -44,7 +44,7 @@ media-fonts/arphicfonts
 media-fonts/nerd-fonts
 media-fonts/noto
 media-fonts/noto-emoji
-media-gfx/figma-linux-bin
+media-gfx/krita
 media-gfx/swayimg
 media-sound/pavucontrol
 net-libs/nodejs
