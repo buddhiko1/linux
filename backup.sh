@@ -29,7 +29,7 @@ cp ~/.config/qutebrowser/quickmarks         .config/qutebrowser/
 # fish
 cp ~/.config/fish/conf.d/alias.fish         .config/fish/conf.d/
 
-# swayimg
+# swajkyimg
 cp ~/.config/swayimg/config                 .config/swayimg/
 
 # ranger
@@ -37,6 +37,9 @@ cp ~/.config/ranger/rc.conf                 .config/ranger/
 
 # background
 cp -r ~/.config/background                  .config/ 
+
+# krita
+cp  ~/.config/kritashortcutsrc                         .config/ 
 
 # sioyek
 cp -r ~/.config/sioyek                      .config/sioyek 
