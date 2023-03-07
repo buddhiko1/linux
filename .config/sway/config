@@ -14,7 +14,9 @@ set $unfocused_bg_color #242424
 set $border_color       #242424
 set $text_color         #ffffff
 
-### operation
+set $term alacritty
+
+### control 
 bindsym $mod+Shift+r    reload
 bindsym $mod+Shift+q    exec "swaynag -t warning -m 'Do you really want to exit sway?' -B 'Yes, exit sway' 'swaymsg exit'"
 
@@ -147,126 +149,104 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
-### app
-# terminal
-set $term alacritty
+### system mode
+set $temp_mini   1600
+set $temp_low    2500
+set $temp_middle 3500
+set $temp_max    5800
+set $Sleep       systemctl hybrid-sleep
+set $Gesture     $HOME/.config/sway/gesture.sh
+
+set $system_mode ( l ) logout   ( s )sleep   ( r )reboot   ( p )shutdown   ( g )gestrue   (↑)max   (←)low   (→)middle   (↓)mini   ( pgUp )vpn on  ( pgDn )vpn off   ( c )screenshot   ( w )wifi   ( - )brightness   ( + )brightness   ( i )contrast   ( d )contrast
+
+mode "$system_mode" {
+  bindsym l exec swaymsg exit,                mode "default"
+  bindsym s exec $Sleep,                      mode "default"
+  bindsym r exec systemctl reboot,            mode "default"
+  bindsym p exec systemctl poweroff -i,       mode "default"
+  bindsym w exec $HOME/.config/sway/wifi.sh,  mode "default"
+  bindsym c     exec grimshot save area ~/Pictures/last.png, mode "default"
+
+  # bindsym g     exec $Gesture, mode "default"
+
+  bindsym Up    exec pkill wlsunset && wlsunset -t $temp_max -S 23:58 -s 23:58,     mode "default"
+  bindsym Left  exec pkill wlsunset && wlsunset -t $temp_low -S 23:58 -s 23:58,     mode "default"
+  bindsym Right exec pkill wlsunset && wlsunset -t $temp_middle -S 23:58 -s 23:58,  mode "default"
+  bindsym Down  exec pkill wlsunset && wlsunset -t $temp_mini -S 23:58 -s 23:58,    mode "default"
+
+  bindsym Prior exec sudo wg-quick up wg0,                   mode "default"
+  bindsym Next  exec sudo wg-quick down wg0,                 mode "default"
+
+  bindsym minus exec sudo ddcutil setvcp 10 - 8, mode "default"
+  bindsym equal exec sudo ddcutil setvcp 10 + 8, mode "default"
+  bindsym d exec sudo ddcutil setvcp 12 - 5,     mode "default"
+  bindsym i exec sudo ddcutil setvcp 12 + 5,     mode "default"
+
+  bindsym Escape mode "default"
+}
+bindsym $mod+Escape mode "$system_mode"
+
+### app mode
+set $app_mode ( d ) dbeaver   ( f ) foliate   ( i ) inkscape   ( k ) krita   ( o ) office   ( v ) vscode
+mode "$app_mode" {
+  bindsym d exec dbeaver,                           mode "default"
+  bindsym f exec com.github.johnfactotum.Foliate,   mode "default"
+  bindsym i exec inkscape,                          mode "default"
+  bindsym k exec krita,                             mode "default"
+  bindsym o exec $HOME/Software/office.AppImage,    mode "default"
+  bindsym v exec vscode,                            mode "default"
+
+  bindsym Escape mode "default"
+}
+bindsym $mod+BackSpace mode "$app_mode"
+
+### quick start app 
 bindsym $mod+Return exec alacritty
-
-# vim
 bindsym $mod+n exec $HOME/.config/nvim/start.sh
-
-# pdf reader
 bindsym $mod+p exec ~/Software/sioyek.AppImage
-
-# browser
 bindsym $mod+q exec qutebrowser 
 bindsym $mod+g exec chromium --remote-debugging-port=9222
 
-# goldendict
-bindsym Mod5+g exec goldendict 
+bindsym $mod+semicolon exec goldendict 
 for_window [title=".*GoldenDict"] resize set width 40 ppt
 for_window [class="GoldenDict"] floating enable
 
-# database client 
-bindsym Mod5+d exec dbeaver
-
-# vscode
-bindsym Mod5+v exec vscode
-
-# krita
-bindsym Mod5+k exec krita 
-
-# sigil
-bindsym Mod5+s exec sigil 
-
-# foliate
-bindsym Mod5+f exec com.github.johnfactotum.Foliate
-
-# office
-bindsym Mod5+o exec ~/Software/office.AppImage
-
-# for libinput-gesturqutebrowser
+### libinput-gesturqutebrowser
 # bindsym $mod+F7 exec pkill wlsunset && wlsunset -t $temp_max -S 23:58 -s 23:58
 # bindsym $mod+F8 exec pkill wlsunset && wlsunset -t $temp_middle -S 23:58 -s 23:58
 # bindsym $mod+F9 exec $HOME/.config/sway/open_vpn.sh
 # bindsym $mod+F10 exec $HOME/.config/sway/close_vpn.sh
 
-### custom
-set $temp_mini   1600
-set $temp_low    2500
-set $temp_middle 3500
-set $temp_max    5800
+### temperature
+exec wlsunset -t $temp_middle -S 23:58 -s 23:58
 
-set $Sleep       systemctl hybrid-sleep
-set $Gesture     $HOME/.config/sway/gesture.sh
+### input method
+exec_always fcitx5 -d --replace
 
-set $mode_custom ( l ) logout   ( s )sleep   ( r )reboot   ( p )shutdown   ( g )gestrue   (↑)max   (←)low   (→)middle   (↓)mini   ( pgUp )vpn on  ( pgDn )vpn off   ( c )screenshot   ( w )wifi   ( - )brightness   ( + )brightness   ( i )contrast   ( d )contrast
-
-
-mode "$mode_custom" {
-  # system contrl
-  bindsym l exec swaymsg exit, mode "default"
-  bindsym s exec $Sleep, mode "default"
-  bindsym r exec systemctl reboot, mode "default"
-  bindsym p exec systemctl poweroff -i, mode "default"
-  bindsym w exec $HOME/.config/sway/wifi.sh, mode "default"
-
-  # guestrue tempstep, vps
-  # bindsym g     exec $Gesture, mode "default"
-
-  bindsym Up    exec pkill wlsunset && wlsunset -t $temp_max -S 23:58 -s 23:58, mode "default"
-  bindsym Left  exec pkill wlsunset && wlsunset -t $temp_low -S 23:58 -s 23:58, mode "default"
-  bindsym Right exec pkill wlsunset && wlsunset -t $temp_middle -S 23:58 -s 23:58, mode "default"
-  bindsym Down  exec pkill wlsunset && wlsunset -t $temp_mini -S 23:58 -s 23:58, mode "default"
-
-  bindsym Prior exec sudo wg-quick up wg0, mode "default"
-  bindsym Next  exec sudo wg-quick down wg0, mode "default"
-  bindsym c     exec grimshot save area ~/Pictures/last.png, mode "default"
-
-  # brightness and contrast
-  bindsym minus exec sudo ddcutil setvcp 10 - 8, mode "default"
-  bindsym equal exec sudo ddcutil setvcp 10 + 8, mode "default"
-  bindsym d exec sudo ddcutil setvcp 12 - 5, mode "default"
-  bindsym i exec sudo ddcutil setvcp 12 + 5, mode "default"
-
-  # back to normal
-  bindsym Return mode "default"
-  bindsym Escape mode "default"
+### pali keyboard layout
+input type:keyboard {
+  xkb_layout us-pali
 }
 
-bindsym $mod+Escape mode "$mode_custom"
+### cursor
+seat seat0 xcursor_theme gentoo
+seat * hide_cursor 5000
 
-# sleep
+### background
+output * bg $HOME/.config/background/bg.jpg fill
+
+### magic gestures
+# exec $Gesture
+
+### sleep
 exec swayidle -w \
   timeout 1200 'swaylock' \
   timeout 3600 'systemctl hybrid-sleep' \
   before-sleep 'block'
 
-# tempstep
-exec wlsunset -t $temp_middle -S 23:58 -s 23:58
-
-# input method
-exec_always fcitx5 -d --replace
-
-# magic gestures
-# exec $Gesture
-
-### startup
-# Lock screen before actually starting, to be used with autologin
+### lock
+# Lock screen before actually starting, to be used with fish autologin
 exec swaylock
 
-# cursor theme
-seat seat0 xcursor_theme gentoo
-
-# hide cursor automatically
-seat * hide_cursor 5000
-
-# pali keyboard layout
-input type:keyboard {
-  xkb_layout us-pali
-}
-
-# auto startup
+### auto startup
 exec $HOME/.config/sway/startup.sh
-
-output * bg $HOME/.config/background/bg.jpg fill

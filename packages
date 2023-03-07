@@ -20,6 +20,7 @@ app-text/sigil
 app-text/tldr
 dev-db/dbeaver-bin
 dev-lang/php
+dev-libs/libthai
 dev-lua/luarocks
 dev-php/composer
 dev-python/cjkwrap
@@ -28,6 +29,7 @@ dev-python/pynvim
 dev-qt/qtwayland
 dev-util/codespell
 dev-util/tree-sitter-cli
+dev-util/xxdiff
 dev-vcs/git
 dev-vcs/gitui
 gnome-base/gsettings-desktop-schemas
@@ -44,6 +46,7 @@ media-fonts/arphicfonts
 media-fonts/nerd-fonts
 media-fonts/noto
 media-fonts/noto-emoji
+media-gfx/inkscape
 media-gfx/krita
 media-gfx/swayimg
 media-sound/pavucontrol
