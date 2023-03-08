@@ -218,8 +218,8 @@ for_window [class="GoldenDict"] floating enable
 ### temperature
 exec wlsunset -t $temp_middle -S 23:58 -s 23:58
 
-### fcitx5
-exec_always fcitx5 -d --replace
+### ibus
+exec_always ibus-daemon -drx
 
 ### pali keyboard layout
 input type:keyboard {
