@@ -38,13 +38,10 @@ cp ~/.config/ranger/rc.conf                 .config/ranger/
 # background
 cp -r ~/.config/background                  .config/ 
 
-# krita
-cp  ~/.config/kritashortcutsrc                         .config/ 
-
 # sioyek
 cp -r ~/.config/sioyek                      .config/sioyek 
 
 # rime
-cp ~/.local/share/fcitx5/rime/default.custom.yaml                   .local/share/fcitx5/rime/
-cp ~/.local/share/fcitx5/rime/luna_pinyin.custom.yaml               .local/share/fcitx5/rime/
+cp ~/.config/ibus/rime/default.custom.yaml                   .config/ibus/rime/
+cp ~/.config/ibus/rime/luna_pinyin.custom.yaml               .config/ibus/rime/
 

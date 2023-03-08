@@ -6,8 +6,6 @@ app-editors/nano
 app-editors/neovim
 app-editors/vscode
 app-eselect/eselect-repository
-app-i18n/fcitx-configtool
-app-i18n/fcitx-rime
 app-i18n/ibus-rime
 app-misc/ddcutil
 app-misc/neofetch
