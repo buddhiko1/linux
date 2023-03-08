@@ -37,7 +37,7 @@
     3. Install media-fonts/nerd-fonts.
     4. Enable 70-no-bitmaps.conf and 10-sub-pixel-rgb.conf.
 
-# Fcitx5
+# [Fcitx](https://wiki.gentoo.org/wiki/Fcitx)
   1. Install fcitx-rime fcitx-configtool (verson > 5).
   2. Copy `etc/environment` to /etc/environment.
   3. Add `exec_always fcitx5 -d --replace` to sway config.

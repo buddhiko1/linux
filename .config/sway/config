@@ -102,15 +102,14 @@ bindsym $mod+Shift+Right  move right
 # Drag floating windows by holding down $mod and left mouse button.
 floating_modifier $mod normal
 # toggle floating window
-bindsym $mod+Shift+f      floating toggle
+bindsym $mod+Control+f      floating toggle
 # toggle floating window focus
-bindsym $mod+Control+f    focus mode_toggle
-# hide floating window
+bindsym $mod+Shift+f    focus mode_toggle
+
+# create scratchpad
 bindsym $mod+bracketleft  move scratchpad
-# show floating window 
+# show scratchpad
 bindsym $mod+bracketright scratchpad show
-# floating pop up automatically
-for_window [class="GoldenDict"] floating enable
 
 ### workspace
 workspace_layout tabbed
@@ -219,7 +218,7 @@ for_window [class="GoldenDict"] floating enable
 ### temperature
 exec wlsunset -t $temp_middle -S 23:58 -s 23:58
 
-### input method
+### fcitx5
 exec_always fcitx5 -d --replace
 
 ### pali keyboard layout
