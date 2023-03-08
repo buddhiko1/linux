@@ -8,10 +8,10 @@ sleep 3
 swaymsg 'workspace 2; exec ~/.config/nvim/start.sh'
 
 # terminal workspace
-swaymsg 'workspace 3; exec alacritty'
+swaymsg 'workspace 3'
 
 # other workspace
-swaymsg 'workspace 4; exec alacritty'
+swaymsg 'workspace 4'
 
 # start other app
 # swaymsg 'exec goldendict'

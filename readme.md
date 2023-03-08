@@ -37,12 +37,10 @@
     3. Install media-fonts/nerd-fonts.
     4. Enable 70-no-bitmaps.conf and 10-sub-pixel-rgb.conf.
 
-# [Ibus](https://wiki.gentoo.org/wiki/IBus)
-  1. Install ibus-rime.
+# [Fcitx](https://wiki.gentoo.org/wiki/Fcitx)
+  1. Install fcitx-rime and fcitx-configtool.
   2. Copy `etc/environment` to /etc/environment.
-  3. Add `exec_always ibus-daemon -drx` to sway config.
-  4. Config with `ibus-setup`.
-  5. Copy custom config to `~/.config/ibus/rime`.
+  5. Copy custom config to `~/.local/share/fcitx5/rime`.
   6. Switch simple and tradition with `Shift + space`.
   7. [Config rime](https://github.com/rime/home/wiki).
 

@@ -128,8 +128,8 @@ set $ws10 "10"
 bindsym $mod+w workspace number $ws1
 bindsym $mod+e workspace number $ws2
 bindsym $mod+o workspace number $ws3
-bindsym $mod+u workspace number $ws4
-bindsym $mod+t workspace number $ws5
+bindsym $mod+t workspace number $ws4
+bindsym $mod+5 workspace number $ws5
 bindsym $mod+6 workspace number $ws6
 bindsym $mod+7 workspace number $ws7
 bindsym $mod+8 workspace number $ws8
@@ -139,8 +139,8 @@ bindsym $mod+0 workspace number $ws10
 bindsym $mod+Shift+w move container to workspace number $ws1
 bindsym $mod+Shift+e move container to workspace number $ws2
 bindsym $mod+Shift+o move container to workspace number $ws3
-bindsym $mod+Shift+u move container to workspace number $ws4
-bindsym $mod+Shift+t move container to workspace number $ws5
+bindsym $mod+Shift+t move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
 bindsym $mod+Shift+6 move container to workspace number $ws6
 bindsym $mod+Shift+7 move container to workspace number $ws7
 bindsym $mod+Shift+8 move container to workspace number $ws8
@@ -206,6 +206,7 @@ bindsym $mod+q exec qutebrowser
 bindsym $mod+g exec chromium --remote-debugging-port=9222
 
 bindsym $mod+semicolon exec goldendict 
+# bindsym $mod+semicolon exec $HOME/Downloads/goldendict.AppImage
 for_window [title=".*GoldenDict"] resize set width 40 ppt
 for_window [class="GoldenDict"] floating enable
 
@@ -218,8 +219,8 @@ for_window [class="GoldenDict"] floating enable
 ### temperature
 exec wlsunset -t $temp_middle -S 23:58 -s 23:58
 
-### ibus
-exec_always ibus-daemon -drx
+### fcitx
+exec_always fcitx5 -d --replace
 
 ### pali keyboard layout
 input type:keyboard {
@@ -239,7 +240,7 @@ output * bg $HOME/.config/background/bg.jpg fill
 ### sleep
 exec swayidle -w \
   timeout 1200 'swaylock' \
-  timeout 3600 'systemctl hybrid-sleep' \
+  timeout 36000 'systemctl hybrid-sleep' \
   before-sleep 'block'
 
 ### lock
