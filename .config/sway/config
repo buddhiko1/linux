@@ -47,16 +47,15 @@ bindsym $mod+b           bar hidden_state show
 bindsym --release $mod+b bar hidden_state hide
 
 ### window
-# create window
-bindsym $mod+t layout tabbed
+# layout 
 bindsym $mod+v splith
-bindsym $mod+s layout toggle split
+bindsym $mod+s layout toggle splith tabbed
 
-# control window
+# control
 bindsym $mod+space kill
 bindsym $mod+f     fullscreen toggle
 
-# resize window
+# resize
 mode "resize" {
   bindsym $left  resize shrink width 10 px or 10 ppt
   bindsym $up    resize grow height 10 px or 10 ppt
@@ -74,7 +73,7 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
-# switch window focus
+# switch focus
 bindsym $mod+a focus parent
 bindsym $mod+z focus child
 
@@ -88,7 +87,7 @@ bindsym $mod+Down   focus down
 bindsym $mod+Up     focus up
 bindsym $mod+Right  focus right
 
-# move window
+# move
 bindsym $mod+Shift+$left  move left
 bindsym $mod+Shift+$down  move down
 bindsym $mod+Shift+$up    move up
@@ -131,7 +130,7 @@ bindsym $mod+w workspace number $ws1
 bindsym $mod+e workspace number $ws2
 bindsym $mod+o workspace number $ws3
 bindsym $mod+u workspace number $ws4
-bindsym $mod+5 workspace number $ws5
+bindsym $mod+t workspace number $ws5
 bindsym $mod+6 workspace number $ws6
 bindsym $mod+7 workspace number $ws7
 bindsym $mod+8 workspace number $ws8
@@ -142,7 +141,7 @@ bindsym $mod+Shift+w move container to workspace number $ws1
 bindsym $mod+Shift+e move container to workspace number $ws2
 bindsym $mod+Shift+o move container to workspace number $ws3
 bindsym $mod+Shift+u move container to workspace number $ws4
-bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+t move container to workspace number $ws5
 bindsym $mod+Shift+6 move container to workspace number $ws6
 bindsym $mod+Shift+7 move container to workspace number $ws7
 bindsym $mod+Shift+8 move container to workspace number $ws8

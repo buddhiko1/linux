@@ -20,7 +20,6 @@ app-text/sigil
 app-text/tldr
 dev-db/dbeaver-bin
 dev-lang/php
-dev-libs/libthai
 dev-lua/luarocks
 dev-php/composer
 dev-python/cjkwrap
