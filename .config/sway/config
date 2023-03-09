@@ -206,7 +206,6 @@ bindsym $mod+q exec qutebrowser
 bindsym $mod+g exec chromium --remote-debugging-port=9222
 
 bindsym $mod+semicolon exec goldendict 
-# bindsym $mod+semicolon exec $HOME/Downloads/goldendict.AppImage
 for_window [title=".*GoldenDict"] resize set width 40 ppt
 for_window [class="GoldenDict"] floating enable
 

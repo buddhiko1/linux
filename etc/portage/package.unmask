@@ -19,6 +19,7 @@ app-i18n/fcitx-qt::gentoo-zh
 x11-libs/xcb-imdkit::gentoo-zh
 app-i18n/rime-prelude::gentoo-zh
 
-# goldendict
-app-text/goldendict::benzene-overlay
-dev-qt/qtwebkit::benzene-overlay
+# xiaoyifang/goldendict
+app-text/goldendict::12101111-overlay
+dev-libs/libthai::gentoo-zh
+dev-libs/libdatrie::gentoo-zh
