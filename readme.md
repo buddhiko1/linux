@@ -20,7 +20,7 @@
   4. Add `GRUB_TIMEOUT=0`, `GRUB_HIDDEN_TIMEOUT=0` and `GRUB_CMDLINE_LINUX_DEFAULT="quiet loglevel=0 vt.global_cursor_default=0 splash"` to /etc/default/grub.
   5. Run `grub-mkconfig -o /boot/grub/grub.cfg`.
   6. [Install grub theme grub2-themes](https://github.com/vinceliuice).
-
+ 
 ## User
   - Set fish as default shell `chsh -s /usr/bin/fish`.
   - Accept easy password: change "enforce" option from "everyone" to "none" in the /etc/security/passwdqc.conf.
@@ -38,7 +38,7 @@
     4. Enable 70-no-bitmaps.conf and 10-sub-pixel-rgb.conf.
 
 # [Fcitx](https://wiki.gentoo.org/wiki/Fcitx)
-  1. Install fcitx-rime and fcitx-configtool.
+  1. Install fcitx-rime, fcitx-configtool and ibus-rime(fix bug:for chines input on chrome and inkscape).
   2. Copy `etc/environment` to /etc/environment.
   5. Copy custom config to `~/.local/share/fcitx5/rime`.
   6. Switch simple and tradition with `Shift + space`.

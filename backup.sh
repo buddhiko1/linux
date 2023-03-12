@@ -20,8 +20,7 @@ cp -r ~/.xkb                                ./
 cp /var/lib/portage/world                   ./packages
 
 # sway 
-cp ~/.config/sway/config                    .config/sway/
-cp ~/.config/sway/startup.sh                .config/sway/
+cp -r ~/.config/sway                        .config/
 
 # qutebrowser bookmarks
 cp ~/.config/qutebrowser/quickmarks         .config/qutebrowser/
@@ -44,4 +43,3 @@ cp -r ~/.config/sioyek                      .config/sioyek
 # rime
 cp ~/.local/share/fcitx5/rime/default.custom.yaml                   .local/share/fcitx5/rime/
 cp ~/.local/share/fcitx5/rime/luna_pinyin.custom.yaml               .local/share/fcitx5/rime/
-

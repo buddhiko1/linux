@@ -17,7 +17,7 @@ set $text_color         #ffffff
 set $term alacritty
 
 ### control 
-bindsym $mod+Shift+r    reload
+bindsym $mod+Shift+s    reload
 bindsym $mod+Shift+q    exec "swaynag -t warning -m 'Do you really want to exit sway?' -B 'Yes, exit sway' 'swaymsg exit'"
 
 ### style
@@ -48,7 +48,6 @@ bindsym --release $mod+b bar hidden_state hide
 
 ### window
 # layout 
-bindsym $mod+v splith
 bindsym $mod+s layout toggle splith tabbed
 
 # control
@@ -69,9 +68,9 @@ mode "resize" {
 
   bindsym Return mode "default"
   bindsym Escape mode "default"
-  bindsym $mod+r mode "default"
+  bindsym $mod+v mode "default"
 }
-bindsym $mod+r mode "resize"
+bindsym $mod+v mode "resize"
 
 # switch focus
 bindsym $mod+a focus parent
@@ -128,8 +127,8 @@ set $ws10 "10"
 bindsym $mod+w workspace number $ws1
 bindsym $mod+e workspace number $ws2
 bindsym $mod+o workspace number $ws3
-bindsym $mod+t workspace number $ws4
-bindsym $mod+5 workspace number $ws5
+bindsym $mod+r workspace number $ws4
+bindsym $mod+t workspace number $ws5
 bindsym $mod+6 workspace number $ws6
 bindsym $mod+7 workspace number $ws7
 bindsym $mod+8 workspace number $ws8
@@ -139,8 +138,8 @@ bindsym $mod+0 workspace number $ws10
 bindsym $mod+Shift+w move container to workspace number $ws1
 bindsym $mod+Shift+e move container to workspace number $ws2
 bindsym $mod+Shift+o move container to workspace number $ws3
-bindsym $mod+Shift+t move container to workspace number $ws4
-bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+r move container to workspace number $ws4
+bindsym $mod+Shift+t move container to workspace number $ws5
 bindsym $mod+Shift+6 move container to workspace number $ws6
 bindsym $mod+Shift+7 move container to workspace number $ws7
 bindsym $mod+Shift+8 move container to workspace number $ws8
@@ -155,10 +154,11 @@ set $temp_max    5800
 set $Sleep       systemctl hybrid-sleep
 set $Gesture     $HOME/.config/sway/gesture.sh
 
-set $system_mode ( l ) logout   ( s )sleep   ( r )reboot   ( p )shutdown   ( g )gestrue   (↑)max   (←)low   (→)middle   (↓)mini   ( pgUp )vpn on  ( pgDn )vpn off   ( c )screenshot   ( w )wifi   ( - )brightness   ( + )brightness   ( i )contrast   ( d )contrast
+set $system_mode ( l )lock   ( q )logout   ( s )sleep   ( r )reboot   ( p )shutdown   ( g )gestrue   (↑)max   (←)low   (→)middle   (↓)mini   ( pgUp )vpn on  ( pgDn )vpn off   ( c )screenshot   ( w )wifi   ( - )brightness   ( + )brightness   ( i )contrast   ( d )contrast
 
 mode "$system_mode" {
-  bindsym l exec swaymsg exit,                mode "default"
+  bindsym l exec swaylock,                    mode "default"
+  bindsym q exec swaymsg exit,                mode "default"
   bindsym s exec $Sleep,                      mode "default"
   bindsym r exec systemctl reboot,            mode "default"
   bindsym p exec systemctl poweroff -i,       mode "default"
@@ -206,7 +206,6 @@ bindsym $mod+q exec qutebrowser
 bindsym $mod+g exec chromium --remote-debugging-port=9222
 
 bindsym $mod+semicolon exec goldendict 
-for_window [title=".*GoldenDict"] resize set width 40 ppt
 for_window [class="GoldenDict"] floating enable
 
 ### libinput-gesturqutebrowser
@@ -222,16 +221,16 @@ exec wlsunset -t $temp_middle -S 23:58 -s 23:58
 exec_always fcitx5 -d --replace
 
 ### pali keyboard layout
-input type:keyboard {
-  xkb_layout us-pali
-}
+# input type:keyboard {
+#   xkb_layout us-pali
+# }
 
 ### cursor
 seat seat0 xcursor_theme gentoo
-seat * hide_cursor 5000
+# seat * hide_cursor 5000
 
 ### background
-output * bg $HOME/.config/background/bg.jpg fill
+output * bg $HOME/.config/background/bg.svg fill
 
 ### magic gestures
 # exec $Gesture

@@ -21,3 +21,6 @@ swaymsg 'workspace number 2'
 
 # audio
 swaymsg 'exec pulseaudio -D'
+
+# get wireguard port
+sudo ~/.config/sway/get_wireguard_port.sh
